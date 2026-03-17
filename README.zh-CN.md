@@ -50,17 +50,22 @@ OpenCLI 通过 Playwright MCP Bridge 扩展与你的浏览器通信。
 2. 运行 `opencli doctor` 确认扩展已安装、Token 可被发现：
 
 ```bash
-opencli doctor            # Token 与配置诊断
-opencli doctor --live     # 额外测试浏览器连通性
+opencli doctor
 ```
 
-3. 运行 `opencli setup` 自动发现 Token 并分发到各工具配置：
+3. 运行 `opencli setup` 将 Token 分发到各工具配置：
 
 ```bash
 opencli setup
 ```
 
-交互式 TUI 会：
+4. 验证浏览器端到端连通性：
+
+```bash
+opencli doctor --live
+```
+
+`setup` 的交互式 TUI 会：
 - 🔍 从 Chrome 自动发现 `PLAYWRIGHT_MCP_EXTENSION_TOKEN`（无需手动复制）
 - ☑️ 显示所有支持的工具（Codex、Cursor、Claude Code、Gemini CLI 等）
 - ✏️ 只更新你选中的文件（空格切换，回车确认）
